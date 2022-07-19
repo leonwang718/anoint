@@ -76,7 +76,7 @@ show.pim <- function(object) {
   print(0)
 }
 
-
+setGeneric("show", function(object) {})
 setMethod("show","pim",function(object) pim.print(object))
 
 setMethod("coef","pim",

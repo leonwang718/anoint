@@ -28,7 +28,7 @@ test.table
 	
 setMethod("print","anoint.fit",function(x,...) print(anointfit.table(x)))
 
-
+setGeneric("show", function(object) {})
 setMethod("show","anoint.fit",function(object) print(anointfit.table(object)))
 
 anointfit.summary <- function(object,...){

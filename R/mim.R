@@ -47,7 +47,7 @@ setMethod("print","anoint",definition=
 	function(x,...) print(x@formula)
 )
 
-
+setGeneric("show", function(object) {})
 setMethod("show","anoint",
 	function(object) print(object@formula)
 )
