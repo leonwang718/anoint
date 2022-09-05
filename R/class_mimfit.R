@@ -47,11 +47,11 @@ anointfit.summary <- function(object,
 	             "pim.approx" = c(5))
 	
 	rowP = switch(type,
-	              "all" = c(1, 2, 3, 4), 
-	                 "obo" = c(1), 
-	                 "uim" = c(2), 
-	                 "pim.exact" = c(3), 
-	                 "pim.approx" = c(4))
+	              "all" = c(1, 2, 3, 4),
+	              "obo" = c(1),
+	              "uim" = c(2),
+	              "pim.exact" = c(3),
+	              "pim.approx" = c(4))
 	
 	pvalues <- cbind(unlist(object@pvalues))
 	
@@ -70,9 +70,9 @@ anointfit.summary <- function(object,
 	
 	cat("\n")
 	if (type %in% c("uim", "obo")) {
-	  print(summary(fit@fits[[type]]$fit[[1]]))
+	  print(summary(object@fits[[type]]$fit[[1]]))
 	} else if (type %in% c("pim.exact", "pim.approx")) {
-	  print(pim.summary(fit@fits[[type]]))
+	  print(pim.summary(object@fits[[type]]))
 	}
 	
 	invisible(list(tests=object@tests,pvalues=object@pvalues))	
